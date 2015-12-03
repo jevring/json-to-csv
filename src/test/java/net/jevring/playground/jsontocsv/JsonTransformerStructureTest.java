@@ -21,7 +21,7 @@ public class JsonTransformerStructureTest {
 			"\"314826\",\"Berlin Tegel\",\"airport\",\"52.5548\",\"13.28903\"\n" +
 			"\"314827\",\"Berlin Schönefeld\",\"airport\",\"52.3887261\",\"13.5180874\"\n" +
 			"\"334196\",\"Berlin Hbf\",\"station\",\"52.525589\",\"13.369548\"\n" +
-			"\"333977\",\"Berlin Ostbahnhof\",\"station\",\"52.510972\",\"13.434567\"";
+			"\"333977\",\"Berlin Ostbahnhof\",\"station\",\"52.510972\",\"13.434567\"\n";
 	private static final String expectedEmptyCsv = "";
 	
 	@Test

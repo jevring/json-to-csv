@@ -1,8 +1,8 @@
 package net.jevring.playground.jsontocsv.csv;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Represents a row in a CSV file.
@@ -32,6 +32,18 @@ public class CsvRow {
 	 * @return a line of csv values
 	 */
 	String toLine() {
-		return values.stream().collect(Collectors.joining(separator));
+		// Java 8
+		// return values.stream().collect(Collectors.joining(separator));
+		StringBuilder sb = new StringBuilder();
+		Iterator<String> iterator = values.iterator();
+		while (iterator.hasNext()) {
+			String value = iterator.next();
+			sb.append(value);
+			if (iterator.hasNext()) {
+				sb.append(separator);
+			}
+		}
+
+		return sb.toString();
 	}
 }

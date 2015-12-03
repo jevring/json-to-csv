@@ -2,7 +2,6 @@ package net.jevring.playground.jsontocsv.csv;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Represents a CSV file.
@@ -42,7 +41,13 @@ public class CsvBuilder {
 	 * @return the string representation ready to be written to file
 	 */
 	public String build() {
-		return rows.stream().map(CsvRow::toLine).collect(Collectors.joining(lineBreak.getChars()));
+		// Java 8
+		//return rows.stream().map(CsvRow::toLine).collect(Collectors.joining(lineBreak.getChars()));
+		StringBuilder sb = new StringBuilder();
+		for (CsvRow row : rows) {
+			sb.append(row.toLine()).append(lineBreak.getChars());
+		}
+		return sb.toString();
 	}
 
 	/**
